@@ -1,0 +1,34 @@
+
+server:
+  port: 8080
+  servlet:
+    context-path: /gestortareasms
+
+spring:
+  application:
+    name: gestortareasms
+    description: Este proyecto tiene como fin la gestion de tareas
+    version: 1.0.0
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:testGestorTareas;Mode=Oracle
+    username: sa
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+
+## Configuración CORS
+cors:
+  pathPattern: "/**"
+  allowedOrigins: "*"
+  allowedMethods: "*"
